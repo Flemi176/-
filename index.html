@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магічна Академія Арканум</title>
+  <link href="style.css" rel="stylesheet">
+  <style>
+    /* ======= Загальні стилі ======= */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      color: #f5e6d6;
+      background-color: #111;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68') no-repeat center center;
+      background-size: cover;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #bfa25c;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #e0c57d;
+      text-shadow: 0 0 10px #bfa25c;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+    }
+
+    /* ======= Вкладки (навігація) ======= */
+    input[type="radio"] {
+      display: none;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #1c1c1c;
+      border-bottom: 2px solid #bfa25c;
+    }
+
+    .tabs label {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      color: #e6d4a3;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .tabs label:hover {
+      background-color: #333;
+    }
+
+    /* ======= Контент вкладок ======= */
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      background-color: rgba(10, 10, 10, 0.7);
+      margin: 2rem auto;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    #tab1:checked ~ main .tab1,
+    #tab2:checked ~ main .tab2,
+    #tab3:checked ~ main .tab3,
+    #tab4:checked ~ main .tab4 {
+      display: block;
+    }
+
+    /* ======= Школи магії ======= */
+    .magic-schools {
+      background: url('https://images.unsplash.com/photo-1603127401233-6f56c99b1a3a') no-repeat center center;
+      background-size: cover;
+    }
+
+    /* ======= Розклад ======= */
+    .schedule {
+      background: url('https://i.imgur.com/9aZ8EIk.jpg') repeat;
+      background-size: cover;
+    }
+
+    .lesson {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: rgba(50, 30, 10, 0.6);
+      border-left: 4px solid #e0c57d;
+      border-radius: 10px;
+    }
+
+    /* ======= Профіль ======= */
+    .profile {
+      background: url('https://images.unsplash.com/photo-1620896517000-f1c5b3eb0d5f') repeat;
+      background-size: cover;
+    }
+
+    /* ======= Footer ======= */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(20, 20, 20, 0.8);
+      border-top: 1px solid #bfa25c;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Магічна Академія Арканум</h1>
+  </header>
+
+  <!-- Вкладки -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+  <input type="radio" name="tab" id="tab4">
+
+  <nav class="tabs">
+    <label for="tab1">Головна</label>
+    <label for="tab2">Школи</label>
+    <label for="tab3">Розклад</label>
+    <label for="tab4">Профіль</label>
+  </nav>
+
+  <!-- Контент -->
+  <main>
+    <section class="tab-content tab1">
+      <h2>Вітаємо в Академії Арканум!</h2>
+      <p>Тут ви здобудете силу, знання і магічні навички. Приготуйтеся до пригод!</p>
+    </section>
+
+    <section class="tab-content tab2 magic-schools">
+      <h2>Школи Магії</h2>
+      <ul>
+        <li><strong>Ігніс</strong> — Вогняна школа, сила та руйнування</li>
+        <li><strong>Аква</strong> — Вода, зцілення та ілюзії</li>
+        <li><strong>Терра</strong> — Земля, захист і алхімія</li>
+        <li><strong>Аеріс</strong> — Повітря, швидкість та блискавки</li>
+        <li><strong>Тенебра</strong> — Тінь, темна магія й некромантія</li>
+      </ul>
+    </section>
+    <section class="tab-content tab3 schedule">
+      <h2>Розклад Занять</h2>
+      <div class="lesson">
+        <h3>Понеділок</h3>
+        <p>09:00 — Алхімія</p>
+        <p>11:00 — Заклинання 1 рівня</p>
+      </div>
+      <div class="lesson">
+        <h3>Вівторок</h3>
+        <p>10:00 — Трансфігурація</p>
+        <p>13:00 — Історія Магії</p>
+      </div>
+    </section>
+
+    <section class="tab-content tab4 profile">
+      <h2>Профіль Учня</h2>
+      <p><strong>Ім'я:</strong> Еліора Вітер</p>
+      <p><strong>Клас:</strong> Чарівниця 2 рівня</p>
+      <p><strong>Школа:</strong> Аеріс</p>
+      <p><strong>Спеціалізація:</strong> Ілюзії та контроль повітря</p>
+      <p><strong>Мана:</strong> 120 / 150</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Арканум. Усі права захищені.</p>
+  </footer>
+</body>
+</html>
